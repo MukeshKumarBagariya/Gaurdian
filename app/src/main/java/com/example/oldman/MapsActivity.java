@@ -1,6 +1,7 @@
 package com.example.oldman;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.FragmentActivity;
@@ -51,11 +52,13 @@ import java.util.List;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
+    private int count=0;
     private GoogleMap mMap;
     private LocationManager locationManager;
     private LocationListener locationListener;
     private RequestQueue requestQueue;
-    private Button emergency;
+    private CardView heartBeatRate;
+    private Button emergency, heartBeatButton;
     public double lattitude;
     public double longitude;
 
@@ -68,8 +71,30 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
         emergency = findViewById(R.id.emergencyButton);
+        heartBeatButton = findViewById(R.id.heartBeatButton);
+        heartBeatRate = findViewById(R.id.heartBeatCardView);
+        heartBeatButton.setBackgroundResource(R.drawable.ic_arrow_upward_black_24dp);
+        heartBeatRate.animate().translationYBy(2000);
+        heartBeatButton.animate().translationXBy(500);
+        heartBeatButton.animate().translationYBy(1850);
         emergency.animate().translationYBy(1700);
         emergency.animate().translationXBy(850);
+        heartBeatButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (count == 0){
+                    heartBeatRate.animate().translationYBy(-300);
+                    heartBeatButton.animate().translationYBy(-300);
+                    heartBeatButton.setBackgroundResource(R.drawable.downward_image);
+                    count = 1;
+                } else if (count == 1){
+                    heartBeatRate.animate().translationYBy(300);
+                    heartBeatButton.animate().translationYBy(300);
+                    heartBeatButton.setBackgroundResource(R.drawable.ic_arrow_upward_black_24dp);
+                    count = 0;
+                }
+            }
+        });
         requestQueue = Volley.newRequestQueue(this);
         String url = "https://warm-river-60977.herokuapp.com/getdata";
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
