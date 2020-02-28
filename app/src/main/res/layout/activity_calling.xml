@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CallingActivity"
+    android:padding="10dp"
+    android:background="#999999"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/ambulanceNumber"
+        android:layout_width="match_parent"
+        app:cardCornerRadius="10dp"
+        android:background="#ffffff"
+        android:layout_height="220sp">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/ambulance"/>
+            <TextView
+                android:id="@+id/callAmbulance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Call Ambulance"
+                android:textSize="35dp"
+                android:textStyle="bold"
+                android:paddingTop="15dp"
+                android:paddingStart="20dp"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="10dp"/>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/olaLauncher"
+        android:layout_width="match_parent"
+        app:cardCornerRadius="10dp"
+        android:background="#ffffff"
+        android:layout_height="220sp">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="80dp"
+                android:paddingStart="10dp"
+                android:layout_height="80dp"
+                android:src="@drawable/ola"/>
+            <TextView
+                android:id="@+id/launchCab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Call Cab"
+                android:textSize="35dp"
+                android:textStyle="bold"
+                android:paddingTop="15dp"
+                android:paddingStart="20dp"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/callDad"
+        android:layout_width="match_parent"
+        app:cardCornerRadius="10dp"
+        android:background="#ffffff"
+        android:layout_marginTop="10dp"
+        android:layout_height="220sp">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="80dp"
+                android:paddingStart="10dp"
+                android:layout_height="80dp"
+                android:src="@drawable/callold"/>
+            <TextView
+                android:id="@+id/callDady"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Call User"
+                android:textSize="35dp"
+                android:textStyle="bold"
+                android:paddingTop="15dp"
+                android:paddingStart="20dp"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+
+</LinearLayout>
